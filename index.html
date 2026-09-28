@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Smart Service Request Platform - Demo</title>
+<link rel="stylesheet" href="style.css"></head><body><div class="w">
+<h1>Smart Service Request &amp; Escalation Platform</h1>
+<p class="sub">Demo with 3 roles. Everything runs in your browser. 1 second = 1 minute of demo time.</p>
+<div class="bar"><button class="g" onclick="skip(30)">Skip 30 minutes</button><button class="g" onclick="skip(120)">Skip 2 hours</button><span class="clock" id="clk"></span></div>
+<div class="tabs" id="tabs"></div>
+
+<section id="p-emp">
+<div class="card"><b>Create service request</b> <span class="sub">(logged in as Suprakash, Finance)</span>
+<div class="g2" style="margin-top:8px">
+<div><label>Request type</label><select id="ty"><option>Official</option><option>Personal</option><option>Facility</option><option>External</option></select></div>
+<div><label>Service nature</label><select id="na"><option>Repair / Maintenance</option><option>IT Support</option><option>Access / Account</option><option>Replacement</option><option>Installation</option></select></div>
+<div><label>Category (decides technician skill)</label><select id="ca"><option>Hardware</option><option>Software</option><option>Network</option></select></div>
+<div><label>Asset</label><select id="as"></select></div>
+<div><label>Severity</label><select id="sv"><option>Low</option><option>Medium</option><option selected>High</option></select></div>
+<div><label>Who is affected?</label><select id="im"><option value="0">Only me</option><option value="2">Whole department</option><option value="3">Whole company</option></select></div>
+</div>
+<label style="margin-top:8px">Problem</label><textarea id="ds" rows="2">Desktop is not powering on.</textarea>
+<div style="margin-top:8px"><button onclick="create()">Submit request</button></div></div>
+<div id="empList"></div></section>
+
+<section id="p-tech" hidden><div class="card"><label>Technician login</label><select id="tsel" onchange="draw()"></select></div><div id="techList"></div></section>
+
+<section id="p-adm" hidden><div id="admTop"></div></section>
+</div>
+<script src="script.js"></script></body></html>
